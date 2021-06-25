@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .headerPhoto {
+            text-align: center;
+            padding: 32px;
+        }
+        
+        .row {
+            display: -ms-flexbox;
+            /* IE 10 */
+            display: flex;
+            -ms-flex-wrap: wrap;
+            /* IE 10 */
+            flex-wrap: wrap;
+            padding: 0 4px;
+        }
+        /* Create two equal columns that sits next to each other */
+        
+        .column {
+            -ms-flex: 20%;
+            /* IE 10 */
+            flex: 20%;
+            padding: 0 4px;
+        }
+        
+        .column img {
+            margin-top: 8px;
+            vertical-align: middle;
+        }
+        /* Style the buttons */
+        
+        .btnGrid {
+            border: none;
+            outline: none;
+            padding: 10px 16px;
+            background-color: #f1f1f1;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        
+        .btnGrid:hover {
+            background-color: #ddd;
+        }
+        
+        .btnGrid.active {
+            background-color: #666;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- grind Inicio -->
+    <!-- Header -->
+    <div class="headerPhoto" id="DragQueen-DalilaVelvet">
+        <h1>Dalila Velvet</h1>
+        <p>Sesión de fotos</p>
+        <button class="btnGrid" onclick="one()">1</button>
+        <button class="btnGrid " onclick="two()">2</button>
+        <button class="btnGrid active" onclick="four()">4</button>
+
+
+    </div>
+
+    <!-- Photo Grid -->
+    <div class="row">
+        <div class="column">
+            <img src="/1ra-temporada/turismo/Dalila-Velvet/Drag-Queen-Dalila-Velvet-Welcome-to-Philippines.webp" style="width:100% " alt="Drag-Queen-Dalila-Velvet-Welcome-to-Philippines" loading="lazy">
+        </div>
+        <div class="column ">
+            <img src="/1ra-temporada/turismo/Dalila-Velvet/Colombia-Drag-Queen-Dalila-Velvet-meme-corona-miss-universo.webp" style="width:100%" alt="Colombia-Drag-Queen-Dalila-Velvet-meme-corona-miss-universo" loading=" lazy ">
+        </div>
+        <div class="column ">
+            <img src="/1ra-temporada/turismo/Dalila-Velvet/Colombia-Drag-Queen-Dalila-Velvet.webp " style="width:100% " alt="Dalila-Velvet/Colombia-Drag-Queen-Dalila-Velvet" loading=" lazy ">
+        </div>
+        <div class="column ">
+            <img src="/1ra-temporada/turismo/Dalila-Velvet/Colombia-Drag-Queen-Dalila-Velvet-meme-envidia.webp " style="width:100% " alt="Colombia-Drag-Queen-Dalila-Velvet-meme-envidia" loading=" lazy ">
+        </div>
+    </div>
+
+
+
+    <script>
+        // Get the elements with class="column "
+        var elements = document.getElementsByClassName("column ");
+
+        // Declare a loop variable
+        var i;
+
+        // Full-width images
+        function one() {
+            for (i = 0; i < elements.length; i++) {
+                elements[i].style.msFlex = "100% "; // IE10
+                elements[i].style.flex = "100% ";
+            }
+        }
+
+        // Two images side by side
+        function two() {
+            for (i = 0; i < elements.length; i++) {
+                elements[i].style.msFlex = "50% "; // IE10
+                elements[i].style.flex = "50% ";
+            }
+        }
+
+        // Four images side by side
+        function four() {
+            for (i = 0; i < elements.length; i++) {
+                elements[i].style.msFlex = "25% "; // IE10
+                elements[i].style.flex = "25% ";
+            }
+        }
+
+
+        // Add active class to the current button (highlight it)
+        var header = document.getElementById("DragQueen-DalilaVelvet ");
+        var btns = header.getElementsByClassName("btnGrid ");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click ", function() {
+                var current = document.getElementsByClassName("active ");
+                current[0].className = current[0].className.replace(" active ", " ");
+                this.className += " active ";
+            });
+        }
+    </script>
+    <!-- Grind Final -->
+</body>
+<!-- 
+https://dragvesti.hihello.monster/1ra-temporada/turismo/Dalila-Velvet/Drag-Queen-Dalila-Velvet-Welcome-to-Philippines.webp
+https://dragvesti.hihello.monster/1ra-temporada/turismo/Dalila-Velvet/Colombia-Drag-Queen-Dalila-Velvet-meme-corona-miss-universo.webp
+https://dragvesti.hihello.monster/1ra-temporada/turismo/Dalila-Velvet/Colombia-Drag-Queen-Dalila-Velvet.webp
+https://dragvesti.hihello.monster/1ra-temporada/turismo/Dalila-Velvet/Colombia-Drag-Queen-Dalila-Velvet-meme-envidia.webp 
+-->
+
+</html>
