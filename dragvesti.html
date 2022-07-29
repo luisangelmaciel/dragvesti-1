@@ -8,15 +8,15 @@
             box-sizing: border-box;
         }
         
-        img { 
-              border-radius: 5px;
+        img {
+            border-radius: 5px;
             cursor: pointer;
             transition: 0.3s;
-        } 
-
+        }
+        
         img:hover {
             opacity: 0.7;
-        } 
+        }
         
         body {
             margin: 0;
@@ -70,6 +70,14 @@
             color: white;
         }
     </style>
+    <Style>
+        .responsive {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+        }
+    </Style>
+    <script src="https://luisangelmaciel.github.io/js/lazysizes.min.js" rel="preload " as="script " async charset="utf-8 "></script>
 </head>
 
 <body>
@@ -138,6 +146,28 @@
     </div>
     <!-- Photo Grid ◀-->
 
+    <div id="elFooterRandomlampOK">
+        <div class="footerRandomlamp">
+            Built by <a href="https://luisangelmaciel.github.io" target="_blank">luisAngel.maciel<b>!</b></a>
+        </div>
+
+    </div>
+    <script>
+        var elements = {
+            footerRandomlamp: document.querySelector('.footerRandomlamp')
+        };
+        var footerRandom = [
+            ' <i class="fa fa-love">❤  </i>',
+            ' to make the web great again',
+            ' who wants more web apps on his homescreen',
+            ' who is tired of seeing browser UI',
+            ' because it\'s ' + new Date().getFullYear()
+        ];
+        var rand = Math.floor(Math.random() * footerRandom.length);
+        elements.footerRandomlamp.innerHTML += footerRandom[rand];
+
+        reset();
+    </script>
 
     <script>
         // Get the elements with class="column "
@@ -180,6 +210,26 @@
                 current[0].className = current[0].className.replace(" active ", " ");
                 this.className += " active ";
             });
+        }
+    </script>
+
+    <img src="img/el chocolate choco ru edition season 7 rupaul drag race de katya zamolodchikova.jpg" width="600" height="400" alt="el chocolate choco ru edition season 7 rupaul drag race de katya zamolodchikova" class=" responsive" loading="lazy" class="lazyload  ">
+
+    <script>
+        if ("loading" in HTMLImageElement.prototype) {
+            // Si el navegador soporta lazy-load, tomamos todas las imágenes que tienen la clase
+            // `lazyload`, obtenemos el valor de su atributo `data-src` y lo inyectamos en el `src`.
+            const images = document.querySelectorAll("img.lazyload");
+            images.forEach((img) => {
+                img.src = img.dataset.src;
+            });
+        } else {
+            // Importamos dinámicamente la libreria `lazysizes`
+            let script = document.createElement("script");
+            script.async = true;
+            script.src =
+                "https://luisangelmaciel.github.io/js/lazysizes.min.js";
+            document.body.appendChild(script);
         }
     </script>
     <!-- Grind Final -->
